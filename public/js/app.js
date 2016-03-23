@@ -3,5 +3,5 @@
 console.log("hello"); 
 
 var LaneModel = Backbone.Model.extend({
-	"url root": "/lanes"
+	urlRoot: "/lanes"
 });
