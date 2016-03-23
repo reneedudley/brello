@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('lanes','LanesController');
-Route::resource('tasks','TaskController');
+Route::resource('tasks','TasksController');
 Route::resource('tags','TagsController');
 
 /*

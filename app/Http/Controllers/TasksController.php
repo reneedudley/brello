@@ -16,7 +16,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        return \App\Tasks::all();
+        return \App\Task::all();
     }
 
 

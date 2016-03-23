@@ -16,7 +16,7 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return \App\Tag::all();
+        return \App\Tags::all();
     }
 
 

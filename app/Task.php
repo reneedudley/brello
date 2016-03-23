@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     public function lane(){
-    	$this->belongsTo('\App\Lane');
+    	return $this->belongsTo('\App\Lane');
     }
     public function tags(){
-    	$this->belongsToMany('\App\Tag');
+    	return $this->belongsToMany('\App\Tag');
     }
  
 }
