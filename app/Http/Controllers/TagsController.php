@@ -28,32 +28,24 @@ class TagsController extends Controller
      */
     public function store(Request $request)
     {
-        $tag = new \App\Tag;
+        $tag = new \App\Tags;
         $tag->color = $request->color;
         $tag->name = $request->name;
+        $tag->save();
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource
+
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return \App\Tags::find($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -64,7 +56,12 @@ class TagsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tag = \App\Tags::find($id);
+        $tag->color = $request->color;
+        $tag->name = $request->name;
+        $tag->save();
+
+        return $tag;
     }
 
     /**
@@ -75,6 +72,10 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = \App\Tag::find($id);
+        $tag->delete();
+        return $tag;
+
+
     }
 }

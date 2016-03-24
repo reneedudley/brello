@@ -30,7 +30,7 @@ class LanesController extends Controller
         $lane = new \App\Lane;
         $lane->name = $request->name;
         $lane->save();
-
+        return $lane;
     }
 
     /**
@@ -42,8 +42,7 @@ class LanesController extends Controller
     public function show($id)
     {
         return \App\Lane::find($id);
-        $lane->name = $request->name;
-        $lane->save();
+
     }
 
 
@@ -59,6 +58,8 @@ class LanesController extends Controller
         $lane = \App\Lane::find($id);
         $lane->name = $request->name;
         $lane->save();
+
+        return $lane;
     }
 
     /**

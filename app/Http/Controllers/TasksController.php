@@ -31,6 +31,8 @@ class TasksController extends Controller
         $task = new \App\Task;
         $task->description = $request->description;
         $task->save();
+
+        return $task;
     }
 
     /**
@@ -42,8 +44,7 @@ class TasksController extends Controller
     public function show($id)
     {
         return \App\Task::find($id);
-        $task->description = $request->description;
-        $task->save();
+    
     }
 
 
@@ -59,6 +60,8 @@ class TasksController extends Controller
         $task = \App\Task::find($id);
         $task->description = $request->description;
         $task->save();
+
+        return $task;
     }
 
     /**
