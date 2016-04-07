@@ -1,12 +1,22 @@
 'use strict';
 
-console.log("hello"); 
+'use strict';
+var $ = window.$ = window.jQuery = require('jquery');
+var Backbone = require('backbone');
+var HomeView = require('./views/HomeView.js');
+var $ = window.$ = window.jQuery = require('jquery');
 
-var LaneModel = Backbone.Model.extend({
-	urlRoot: "/lanes"
+$(function($){
+	$.ajaxSetup({
+	headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
+
+	var homeView = new HomeView();
+	homeView.render();
+	$('#content').html(homeView.el);
 });
 
-var LanesColletction = Backbone.Collection.extend({
-	url: "/lanes",
-	Model: "LaneModel"
-});
+
