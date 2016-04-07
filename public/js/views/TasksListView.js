@@ -7,7 +7,11 @@ var TasksListView = Backbone.View.extend({
 	el: '<ul></ul>',
 	template: _.template('\
 		<% tasks.each(function(post) {%>\
-			<li><a href="#"><%=post.get("tasks") %></a></li>\
+			<li><a href="#"><%= tasks.get("description") %></a>\
+				<% if (tasks.get("tag")) { %>\
+					<small><%= tasks.get("tag").get("name") %></small>\
+				 <% } %>\
+			</li>\
 			<% }) %>\
 	'),
 

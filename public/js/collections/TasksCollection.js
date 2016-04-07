@@ -8,7 +8,9 @@ var TaskModel = require('../models/TaskModel.js');
 
 var TasksCollection = Backbone.Collection.extend({
 	url:"/tasks",
-	Model: TaskModel
+	Model: TaskModel, 
+
+	
 });
 
 
